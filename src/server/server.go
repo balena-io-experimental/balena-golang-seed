@@ -7,14 +7,14 @@ import (
 	"github.com/gorilla/mux"
 )
 
-func HomeHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "Hello, gb user!")
+func homeHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, "Hello, resin user!")
 }
 
 func main() {
 	fmt.Println("I'm in the main loop!!")
 	r := mux.NewRouter()
-	r.HandleFunc("/", HomeHandler)
+	r.HandleFunc("/", homeHandler)
 	http.ListenAndServe(":8080", r)
 
 }
