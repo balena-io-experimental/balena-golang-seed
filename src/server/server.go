@@ -15,6 +15,6 @@ func main() {
 	fmt.Println("I'm in the main loop!!")
 	r := mux.NewRouter()
 	r.HandleFunc("/", homeHandler)
-	http.ListenAndServe(":8080", r)
+	http.ListenAndServe(":80", r)
 
 }

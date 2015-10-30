@@ -1,0 +1,17 @@
+# base-image for golang on any machine using a template var
+FROM resin/%%RESIN_MACHINE_NAME%%-golang:latest
+
+ENV INITSYSTEM on
+
+#Copy all the code into /go
+COPY src/ $GOPATH/src
+COPY vendor $GOPATH/vendor
+
+#build all the Go source with gb.
+RUN cd $GOPATH
+RUN go get github.com/constabulary/gb
+RUN go install github.com/constabulary/gb/...
+RUN gb build all
+
+#tell our container to run the server binary on start.
+CMD ["./bin/server"]
