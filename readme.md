@@ -3,8 +3,6 @@
 A the title says this is a starting point for building a [Go][go-link] on the
 [Intel Edison][edison-link] using [resin.io][resin-link].
 
-### **Note:** This will only work on Intel Edison. Currently Go cannot build on resin.io ARM images.
-
 The project uses the awesome [GB tool][gb-link] to build and package the project
 within the Dockerfile. This way all the dependencies are built along with the source.
 To include a dependencies all you need to do is add the source of that dependency
